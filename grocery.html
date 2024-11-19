@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Ordering</title>
+    <link rel="stylesheet" href="grocery.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Order Your Groceries</h1>
+    </header>
+
+    <!-- Grocery Order Form -->
+    <section id="order-form">
+        <h2>Order Details</h2>
+        <form>
+            <label for="category">Choose Category:</label>
+            <select id="category">
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="dairy">Dairy</option>
+            </select>
+
+            <label for="items">Select Items:</label>
+            <input type="checkbox" id="apple" name="item" value="Apple"> Apple
+            <input type="checkbox" id="banana" name="item" value="Banana"> Banana
+            <input type="checkbox" id="carrot" name="item" value="Carrot"> Carrot
+            <input type="checkbox" id="broccoli" name="item" value="Broccoli"> Broccoli
+            <input type="checkbox" id="milk" name="item" value="Milk"> Milk
+            <input type="checkbox" id="cheese" name="item" value="Cheese"> Cheese
+
+            <button type="button" onclick="showUserInfo()">Next</button>
+        </form>
+    </section>
+
+    <!-- User Information Section -->
+    <section id="user-info" style="display: none;">
+        <h2>Your Information</h2>
+        <form id="user-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+
+            <button type="button" onclick="placeOrder()">Place Order</button>
+        </form>
+    </section>
+
+    <!-- Interactive Quiz Section -->
+    <section id="quiz-section">
+        <h2>Grocery Trivia Quiz</h2>
+        <div id="quiz-container">
+            <div class="question" data-index="0">
+                <p>1. Which fruit is known for being high in potassium?</p>
+                <button onclick="selectAnswer(0, 'Banana')">Banana</button>
+                <button onclick="selectAnswer(0, 'Apple')">Apple</button>
+                <button onclick="selectAnswer(0, 'Orange')">Orange</button>
+            </div>
+            <div class="question" data-index="1">
+                <p>2. Which vegetable is known for its high vitamin C content?</p>
+                <button onclick="selectAnswer(1, 'Broccoli')">Broccoli</button>
+                <button onclick="selectAnswer(1, 'Carrot')">Carrot</button>
+                <button onclick="selectAnswer(1, 'Spinach')">Spinach</button>
+            </div>
+            <div class="question" data-index="2">
+                <p>3. Which dairy product is made from fermented milk?</p>
+                <button onclick="selectAnswer(2, 'Cheese')">Cheese</button>
+                <button onclick="selectAnswer(2, 'Milk')">Milk</button>
+                <button onclick="selectAnswer(2, 'Yogurt')">Yogurt</button>
+            </div>
+        </div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+        <p id="quiz-result"></p>
+    </section>
+
+    <!-- Joke Section -->
+    <section id="joke-section">
+        <h2>Enjoy a Joke While You Wait!</h2>
+        <p id="joke">Fetching a joke...</p>
+        <button onclick="fetchJoke()">Get Another Joke</button>
+    </section>
+
+    <script src="grocery.js"></script>
+</body>
+
+</html>
